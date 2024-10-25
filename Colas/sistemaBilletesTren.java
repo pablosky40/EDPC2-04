@@ -1,4 +1,4 @@
-package Peticiones;
+package Colas;
 import java.io.*;
 import java.util.*;
 public class sistemaBilletesTren{
