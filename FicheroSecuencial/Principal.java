@@ -1,4 +1,4 @@
-package Sesion1;
+package FicheroSecuencial;
 
 import java.io.*;
 
