@@ -1,4 +1,4 @@
-package Sesion1;
+package FicheroSecuencial;
 
 public class Satelite implements LectorFicheroSecuencial {
 	private String nombreSatelite;
