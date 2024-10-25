@@ -2,7 +2,7 @@
 //Nombre del autor: Jesús Márquez Duque
 //Fecha de creacion: 25/09/2024
 //Version de la clase: 4.30.0
-package FicheroSecuncial;
+package FicheroSecuencial;
 import java.util.*;
 import java.io.*;
 public class FicheroSecuencial <T extends LectorFicheroSecuencial> {
