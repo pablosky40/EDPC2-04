@@ -1,4 +1,4 @@
-package Peticiones;
+package Colas;
 
 public class billetesDeTren implements iLecturaFicheros,Comparable<billetesDeTren> {
 
