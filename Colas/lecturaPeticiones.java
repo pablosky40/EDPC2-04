@@ -3,7 +3,7 @@ package Colas;
 import java.io.*;
 import java.util.*;
 
-public class lecturaPeticiones <T extends iLecturaFicheros> {
+public class lecturaPeticiones <T extends iLecturaFicheros<billetesDeTren>> {
 
 	private File fichero;
 	private Scanner sc;
