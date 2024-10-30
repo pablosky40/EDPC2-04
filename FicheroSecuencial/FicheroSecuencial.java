@@ -5,11 +5,11 @@
 package FicheroSecuencial;
 import java.util.*;
 import java.io.*;
-public class FicheroSecuencial <T extends LectorFicheroSecuencial> {
+public class ficheroSecuencial <T extends iLectorFicheroSecuencial<satelite>>{
 	private File fichero;
 	private Scanner escaner;
 	private String separador;
-	public FicheroSecuencial(String nombreFichero, String separador)throws FileNotFoundException {
+	public ficheroSecuencial(String nombreFichero, String separador)throws FileNotFoundException {
 		this.fichero = new File(nombreFichero);
 		this.escaner = new Scanner(fichero);
 		this.separador = separador;
