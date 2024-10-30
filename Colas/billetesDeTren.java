@@ -1,22 +1,12 @@
 package Colas;
 
-public class billetesDeTren implements iLecturaFicheros,Comparable<billetesDeTren> {
+public class billetesDeTren implements iLecturaFicheros<billetesDeTren>,Comparable<billetesDeTren> {
 
 	public enum tipoSuscripcion {DIAMOND,GOLD,SILVER,BASIC};
 	public enum tipoDestino{NATIONAL,INTERNATIONAL};
 	private String IDBillete, IDUsuario, destino, numBilletes;
 	private tipoSuscripcion tipoSuscripcion;
 	private tipoDestino tipoDestino;
-	
-	public billetesDeTren(String iDBillete, String iDUsuario, tipoSuscripcion tipoSuscripcion, tipoDestino tipoDestino,
-			String destino, String numBilletes) {
-		this.IDBillete = iDBillete;
-		this.IDUsuario = iDUsuario;
-		this.tipoSuscripcion = tipoSuscripcion;
-		this.tipoDestino = tipoDestino;
-		this.destino = destino;
-		this.numBilletes = numBilletes;
-	}
 
 	public String getIDBillete() {
 		return IDBillete;
@@ -88,31 +78,32 @@ public class billetesDeTren implements iLecturaFicheros,Comparable<billetesDeTre
 	}
 
 	public void leerFichero(String[]datosPeticiones) {
-		datosPeticiones[0]=IDBillete;
-		datosPeticiones[1]=IDUsuario;
-		switch(tipoSuscripcion) {
-			case BASIC:
-				datosPeticiones[3]="BASIC";
+		this.IDBillete=datosPeticiones[0];
+		this.IDUsuario=datosPeticiones[1];
+		switch(datosPeticiones[3]) {
+			case "BASIC":
+				this.tipoSuscripcion=tipoSuscripcion.BASIC;
 			break;
-			case SILVER:
-				datosPeticiones[3]="SILVER";
+			case "SILVER":
+				this.tipoSuscripcion=tipoSuscripcion.SILVER;
 			break;
-			case GOLD:
-				datosPeticiones[3]="GOLD";
+			case "GOLD":
+				this.tipoSuscripcion=tipoSuscripcion.GOLD;
 			break;
-			case DIAMOND:
-				datosPeticiones[3]="DIAMOND";
-			break;
-		}
-		switch(tipoDestino) {
-			case NATIONAL:
-				datosPeticiones[4]="NATIONAL";
-			break;
-			case INTERNATIONAL:
-				datosPeticiones[4]="INTERNATIONAL";
+			case "DIAMOND":
+				this.tipoSuscripcion=tipoSuscripcion.DIAMOND;
 			break;
 		}
-		datosPeticiones[4]=destino;
-		datosPeticiones[5]=numBilletes;
+		switch(datosPeticiones[4]) {
+			case "NATIONAL":
+				this.tipoDestino=tipoDestino.NATIONAL;
+			break;
+			case "INTERNATIONAL":
+				this.tipoDestino=tipoDestino.INTERNATIONAL;
+			break;
+		}
+		this.destino=datosPeticiones[4];
+		this.numBilletes=datosPeticiones[5];
 	}
 }
+
