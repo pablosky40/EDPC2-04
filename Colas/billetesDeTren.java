@@ -80,7 +80,7 @@ public class billetesDeTren implements iLecturaFicheros<billetesDeTren>,Comparab
 	public void leerFichero(String[]datosPeticiones) {
 		this.IDBillete=datosPeticiones[0];
 		this.IDUsuario=datosPeticiones[1];
-		switch(datosPeticiones[3]) {
+		switch(datosPeticiones[2]) {
 			case "BASIC":
 				this.tipoSuscripcion=tipoSuscripcion.BASIC;
 			break;
@@ -94,7 +94,7 @@ public class billetesDeTren implements iLecturaFicheros<billetesDeTren>,Comparab
 				this.tipoSuscripcion=tipoSuscripcion.DIAMOND;
 			break;
 		}
-		switch(datosPeticiones[4]) {
+		switch(datosPeticiones[3]) {
 			case "NATIONAL":
 				this.tipoDestino=tipoDestino.NATIONAL;
 			break;
