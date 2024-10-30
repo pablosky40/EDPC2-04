@@ -1,5 +1,5 @@
 package FicheroSecuencial;
 
-public interface LectorFicheroSecuencial {
+public interface LectorFicheroSecuencial <T extends Satelite>{
 	void readData(String[]str);
 }
