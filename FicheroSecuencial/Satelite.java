@@ -1,6 +1,6 @@
 package FicheroSecuencial;
 
-public class Satelite implements LectorFicheroSecuencial {
+public class satelite implements iLectorFicheroSecuencial<satelite> {
 	private String nombreSatelite;
 	private String designador;
 	private String epoca;
@@ -9,17 +9,7 @@ public class Satelite implements LectorFicheroSecuencial {
 	private String excentricidad;
 	private String argumentoPerigreo;
 	private String movimientoMedio;
-	public Satelite(String nombreSatelite, String designador, String epoca, String inclinacion, String RAAN,
-			String excentricidad, String argumentoPerigreo, String movimientoMedio) {
-		this.nombreSatelite = nombreSatelite;
-		this.designador = designador;
-		this.epoca = epoca;
-		this.inclinacion = inclinacion;
-		this.RAAN = RAAN;
-		this.excentricidad = excentricidad;
-		this.argumentoPerigreo = argumentoPerigreo;
-		this.movimientoMedio = movimientoMedio;
-	}
+	
 	public String getNombreSatelite() {
 		return nombreSatelite;
 	}
@@ -68,15 +58,20 @@ public class Satelite implements LectorFicheroSecuencial {
 	public void setMovimientoMedio(String movimientoMedio) {
 		this.movimientoMedio = movimientoMedio;
 	}
+	public String toString() {
+		return "satelite [nombreSatelite=" + nombreSatelite + ", designador=" + designador + ", epoca=" + epoca
+				+ ", inclinacion=" + inclinacion + ", RAAN=" + RAAN + ", excentricidad=" + excentricidad
+				+ ", argumentoPerigreo=" + argumentoPerigreo + ", movimientoMedio=" + movimientoMedio + "]";
+	}
 	public void readData(String []str) {
-		str[0]=nombreSatelite;
-		str[1]=designador;
-		str[2]=epoca;
-		str[3]=inclinacion;
-		str[4]=RAAN;
-		str[5]=excentricidad;
-		str[6]=argumentoPerigreo;
-		str[7]=movimientoMedio;
+		this.nombreSatelite=str[0];
+		this.designador=str[1];
+		this.epoca=str[2];
+		this.movimientoMedio=str[3];
+		this.excentricidad=str[4];
+		this.inclinacion=str[5];
+		this.RAAN=str[6];
+		this.argumentoPerigreo=str[7];
 	}
 }
 
