@@ -95,10 +95,10 @@ public class billetesDeTren implements iLecturaFicheros<billetesDeTren>,Comparab
 			break;
 		}
 		switch(datosPeticiones[3]) {
-			case "NATIONAL":
+			case "N":
 				this.tipoDestino=tipoDestino.NATIONAL;
 			break;
-			case "INTERNATIONAL":
+			case "I":
 				this.tipoDestino=tipoDestino.INTERNATIONAL;
 			break;
 		}
