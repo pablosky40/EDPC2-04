@@ -4,7 +4,7 @@ import java.io.*;
 
 public class principal <T extends satelite> {
 	public static void main(String[] args) throws FileNotFoundException {
-		String nombreFichero="D:\\ESI UCLM\\Segundo año\\2ºC\\Primer cuatrimestre\\Estructura de datos (EDA)\\Practicas\\Practica 1\\weather.csv";
+		String nombreFichero="weather.csv";
 		String separador=",";
 		ficheroSecuencial<satelite> fichero=new ficheroSecuencial<>(nombreFichero,separador);
 		fichero.saltar();
