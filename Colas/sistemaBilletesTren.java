@@ -12,35 +12,24 @@ public class sistemaBilletesTren{
 		int limNacional=0;
 		fichero.saltar();
 		billetesDeTren billete=new billetesDeTren();
-		System.out.println("Peticiones:");
 		while(fichero.finLectura()) {
 			fichero.leer(billete);
 			billetes.add(billete);
-			System.out.println(billete.toString());
-		}
-		System.out.println("\n");
-		billetesDeTren b[]=new billetesDeTren[billetes.size()];
-		for(int i=0;i<=b.length-1;i++){
-			b[i]=billetes.remove();
-		}
-		if(limInternacional!=20||limNacional!=30) {
-			for(int i=0;i<=b.length-1;i++) {
-				switch(b[i].getTipoDestino()){
+			if(limInternacional!=20||limNacional!=30) {
+				switch(billete.getTipoDestino()) {
 					case INTERNATIONAL:
 						billetesInternacionales.add(billete);
-						System.out.println("Billete internacional con información "+billete.toString()+" procesado correctamente");
-						limInternacional++;
-					break;
+						System.out.println("Billete internacional con datos "+billete.toString()+" ha sido procesado correctamente");
+						break;
 					case NATIONAL:
 						billetesNacionales.add(billete);
-						System.out.println("Billete nacional con información "+billete.toString()+" procesado correctamente");
-						limNacional++;
-					break;
+						System.out.println("Billete nacional con datos "+billete.toString()+" ha sido procesado correctamente");
+						break;
 				}
 			}
+			else
+				System.out.println("El billete no ha podido procesarse. Límite de billetes alcanzado");
 		}
-		else
-			System.out.println("No se ha podido procesar el billete. Límite de billetes alcanzado");
 		fichero.cerrar();
 	}
 }
