@@ -5,7 +5,7 @@
  * Versión de la clase: 4.30.0
  * Descripción de la clase: Interfaz del programa que, al ser implementada, se crea un método que guarde los datos del fichero leídos en un objeto/variable
  */
-package Peticiones;
+package Colas;
 
 public interface iLecturaFicheros {
 	/*
