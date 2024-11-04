@@ -1,15 +1,20 @@
-package Pilas;
-import java.util.Stack;
-public class PilaValorMin extends Stack<Float> {
+/*
+ * J_P_M_C2-04
+*/
+package pilas;
 
-	private Stack<Float> pilaMinima;
+import java.util.*;
+ 
+public class PilaValorMin extends Stack<Double> {
+
+	private Stack<Double> pilaMinima;
 
 	public PilaValorMin() {
 		super();
-		pilaMinima = new Stack<Float>();
+		pilaMinima = new Stack<Double>();
 	}
 
-	public Float push(Float num) {
+	public Double push(Double num) {
 		if (empty())
 			pilaMinima.push(num);
 		else if (num <= pilaMinima.peek())
@@ -17,16 +22,16 @@ public class PilaValorMin extends Stack<Float> {
 		return super.push(num);
 	}
 
-	public Float pop() {
-		Float valor = super.peek();
+	public Double pop() {
+		Double valor = super.pop();
 		if (valor.equals(pilaMinima.peek())) {
 			pilaMinima.pop();
 		}
 		return valor;
-		
+
 	}
 
-	public Float min() {
+	public Double min() {
 		return pilaMinima.peek();
 
 	}
@@ -37,8 +42,9 @@ public class PilaValorMin extends Stack<Float> {
 			pop();
 	}
 
+	@Override
 	public String toString() {
-		return "La pila auxiliar contiene los elementos: "+super.toString()+" y la de valor mínimo contiene"
-				+ "los elementos: "+pilaMinima;
+		return "[pilaMinima=" + pilaMinima + "]";
 	}
+
 }
