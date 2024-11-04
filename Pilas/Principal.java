@@ -15,7 +15,7 @@ public class Principal {
 		p1.push(1.2);
 		p1.push(4.8);
 
-		p2.push(12.4); //se intoducen los numeros en la otra pila
+		p2.push(12.4); //se introducen los numeros en la otra pila
 		p2.push(9.0);
 		p2.push(2.1);
 		p2.push(7.0);
