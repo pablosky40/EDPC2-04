@@ -35,7 +35,7 @@ public class PilaValorMin extends Stack<Double> {
 	 * Archivos necesarios: Ninguno
 	 */
 	public Double pop() {
-		Double valor = super.pop();
+		Double valor = super.peek();
 		if (valor.equals(pilaMinima.peek())) {
 			pilaMinima.pop();
 		}
