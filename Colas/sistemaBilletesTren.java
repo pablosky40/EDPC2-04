@@ -18,10 +18,10 @@ public class sistemaBilletesTren{
 		Queue<billetesDeTren> billetesInternacionales=new LinkedBlockingQueue<>();
 		int limInternacional=0;//Creacion de una variable entera que induca cuantos billetes internacionales están siendo procesados, en este caso, 0
 		int limNacional=0;//Creacion de una variable entera que induca cuantos billetes nacionales están siendo procesados, en este caso, 0
-		fichero.saltar();//Salta una línea en la lectura del fichero
+		fichero.saltar();
 		billetesDeTren billete=new billetesDeTren();//Creacion de un objeto de la clase billetesDeTren
 		while(fichero.finLectura()) {//Bucle que se realiza mientras la lectura del fichero no termine
-			fichero.leer(billete);//Lee el fichero, y guarda sus billetes en el objeto billetes
+			fichero.leer(billete);
 			billetes.add(billete);//Añade a la cola con prioridad los billetes leídos
 			System.out.println(billete.toString());//Imprime por pantalla la representacion del objeto billete
 			if(limInternacional!=20||limNacional!=30) {//Condicion que se cumple si no se alcanza el límite de los billetes procesados
@@ -39,6 +39,6 @@ public class sistemaBilletesTren{
 			else//Condicion que se cumple si no se ha cumplido lo anterior
 				System.out.println("El billete no ha podido procesarse. Límite de billetes alcanzado");//Imprime un mensaje si no ha podido procesar el billete
 		}
-		fichero.cerrar();//Cierra la lectura del fichero
+		fichero.cerrar();
 	}
 }
