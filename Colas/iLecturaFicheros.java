@@ -1,4 +1,5 @@
 /*
+ * J_P_M_C2-04
  * Nombre de la clase: iLecturaFicheros
  * Nombre del autor: Jesús Márquez Duque
  * Fecha de creación: 09/10/2024
