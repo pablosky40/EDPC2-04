@@ -34,7 +34,7 @@ public class Principal {
 	
 	public static String mostrarPilas(PilaValorMin p) { // metodo para modularizar la salida del programa
 		String cad = "El valor mínimo de la pila: " + p.min();
-		cad += ", contenido de la pila" + p;
+		cad += ", contenido de la pila " + p;
 		return cad;
 		
 	}
