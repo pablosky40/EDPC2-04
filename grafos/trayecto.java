@@ -1,9 +1,10 @@
 package grafos;
-
-public class Trayecto implements iLecturaFichero{
+import graphsDS_ESI_UCLM_v2.*;
+public class Trayecto implements iLecturaFichero,Identity{
 	private String estacion1;
 	private String estacion2;
 	private String numLineas;
+	private String ID;
 	public String getNumLineas() {
 		return numLineas;
 	}
@@ -29,6 +30,9 @@ public class Trayecto implements iLecturaFichero{
 		this.estacion1=s[0];
 		this.estacion2=s[1];
 		this.numLineas=s[2];
-	}	
+	}
+	public String getID() {
+		return ID;
+	}
+	
 }
-
