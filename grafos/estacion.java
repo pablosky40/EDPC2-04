@@ -1,6 +1,7 @@
 package grafos;
+import graphsDS_ESI_UCLM_v2.*;
 
-public class estacion implements iLecturaFichero {
+public class Estacion implements iLecturaFichero,Identity {
 	private String identificador;
 	private String latitud;
 	private String longitud;
@@ -55,5 +56,8 @@ public class estacion implements iLecturaFichero {
 		return "Estacion con: Identificador=" + identificador + ", latitud=" + latitud + ", longitud=" + longitud
 				+ ", nombre=" + nombre + ", zona=" + zona + "y numero de líneas=" + numLineas ;
 	}
-	
+	public String getID() {
+		return identificador;
+	}
 }
+
