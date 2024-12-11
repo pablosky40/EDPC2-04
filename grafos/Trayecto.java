@@ -1,11 +1,10 @@
 package grafos;
 import graphsDS_ESI_UCLM_v2.*;
-
-public class Linea implements iLecturaFichero,Identity {
+public class Trayecto implements iLecturaFichero,Identity{
+	private String identificador;
 	private String estacion1;
 	private String estacion2;
 	private String numLineas;
-	private String ID;
 	public String getNumLineas() {
 		return numLineas;
 	}
@@ -25,7 +24,7 @@ public class Linea implements iLecturaFichero,Identity {
 		this.estacion2 = estacion2;
 	}
 	public String toString() {
-		return "Linea con Estacion1=" + estacion1 + ", estacion2=" + estacion2+", y con "+numLineas+" líneas" ;
+		return "Linea con estacion1=" + estacion1 + ", estacion2=" + estacion2+", y con "+numLineas+" líneas" ;
 	}
 	public void leerDatos(String []s) {
 		this.estacion1=s[0];
@@ -33,7 +32,10 @@ public class Linea implements iLecturaFichero,Identity {
 		this.numLineas=s[2];
 	}
 	public String getID() {
-		return ID;
+		return identificador;
 	}
+	
 }
+
+
 
