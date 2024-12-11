@@ -73,9 +73,9 @@ public class MetroLondres {
 			System.out.println("Pasemos al siguiente metodo");
 		}
 		System.out.println("Estaciones terminales: ");
-		Stack<Vertex<Estacion>> terminales=buscarTerminales(grafo);
+		Queue<Vertex<Estacion>> terminales=buscarTerminales(grafo);
 		while(!terminales.isEmpty()) {
-			System.out.println(terminales.pop().getData().toString());
+			System.out.println(terminales.poll().getData().toString());
 		}
 	}
 
@@ -147,17 +147,43 @@ public class MetroLondres {
 		}
 		return grado;
 	}
-	private static Stack<Vertex<Estacion>> buscarTerminales(Graph<Estacion,Trayecto> grafo){
+	private static Queue<Vertex<Estacion>> buscarTerminales(Graph<Estacion,Trayecto> grafo){
 		Iterator<Vertex<Estacion>> it=grafo.getVertices();
-		Stack<Vertex<Estacion>> pilaTerminales=new Stack<>();
+		Queue<Vertex<Estacion>> colaTerminales=new LinkedList<>();
 		while(it.hasNext()) {
 			Vertex<Estacion> v=it.next();
 			int grado=calcularGrado(grafo,v);
 			if(grado==1) {
-				pilaTerminales.push(v);
+				colaTerminales.offer(v);
 			}
 		}
-		return pilaTerminales;
+		return colaTerminales;
+	}
+	private static double calcularDistancia(Vertex<Estacion> v,Vertex<Estacion> w) {
+		double f=111320;
+		double latitudV=Double.parseDouble(v.getData().getLatitud());
+		double latitudW=Double.parseDouble(w.getData().getLatitud());
+		double longitudV=Double.parseDouble(v.getData().getLongitud());
+		double longitudW=Double.parseDouble(w.getData().getLongitud());
+		double distanciaC=Math.sqrt(((latitudV-latitudW)*(latitudV-latitudW))+((longitudV-longitudW)*(longitudV-longitudW)));
+		double distancia=f*distanciaC;
+		return distancia;
+	}
+	private static void conectarVertices(Graph<Estacion,Trayecto> grafo) {
+		Queue<Vertex<Estacion>>	cola=buscarTerminales(grafo);
+		Iterator<Vertex<Estacion>> it=grafo.getVertices();
+		Queue<Vertex<Estacion>> colaPrioridad=new LinkedList<>();
+		Queue<Double> colaDistancias= new PriorityQueue<>();
+		while(!cola.isEmpty()) {
+			Vertex<Estacion> vCola=cola.poll();
+			while(it.hasNext()) {
+				Vertex<Estacion> v=it.next();
+				double distancia=calcularDistancia(vCola,v);
+				colaDistancias.offer(distancia);
+			}
+		}
+		
 	}
 }
+
 
