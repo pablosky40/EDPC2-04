@@ -49,15 +49,14 @@ public class Estacion implements iLecturaFichero,Identity {
 		this.latitud=s[1];
 		this.longitud=s[2];
 		this.nombre=s[3];
-		this.numLineas=s[4];
+		this.numLineas=s[6];
 		this.zona=s[5];
 	}
 	public String toString() {
 		return "Estacion con: Identificador=" + identificador + ", latitud=" + latitud + ", longitud=" + longitud
-				+ ", nombre=" + nombre + ", zona=" + zona + "y numero de líneas=" + numLineas ;
+				+ ", nombre=" + nombre + ", zona=" + zona + " y numero de líneas=" + numLineas ;
 	}
 	public String getID() {
 		return identificador;
 	}
 }
-
