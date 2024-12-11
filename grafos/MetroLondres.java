@@ -148,6 +148,16 @@ public class MetroLondres {
 		return grado;
 	}
 	private static Stack<Vertex<Estacion>> buscarTerminales(Graph<Estacion,Trayecto> grafo){
-		
+		Iterator<Vertex<Estacion>> it=grafo.getVertices();
+		Stack<Vertex<Estacion>> pilaTerminales=new Stack<>();
+		while(it.hasNext()) {
+			Vertex<Estacion> v=it.next();
+			int grado=calcularGrado(grafo,v);
+			if(grado==1) {
+				pilaTerminales.push(v);
+			}
+		}
+		return pilaTerminales;
 	}
 }
+
