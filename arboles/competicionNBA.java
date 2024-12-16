@@ -61,7 +61,7 @@ public class competicionNBA{
     if(t.isExternal(nodo))
     	sv=nodo.getElement();
     else if(t.isInternal(nodo))
-    	sv=nodo.getElement()+nodo.getLeft().getElement();
+    	sv=nodo.getElement()+nodo.getLeft().getElement()+nodo.getRight().getElement();
     return sv;
   }
 }
