@@ -1,92 +1,182 @@
-package P5;
-import graphsDS_ESI_UCLM_v2.*;
+/*
+ * J_P_M_C2-04
+ * Nombre de la clase: Estacion
+ * Nombre de los autores: Jesús Márquez Duque, Miguel Mora Vega, Pablo Santillana Fernandez
+ * Fecha de creación: 13/11/2024
+ * Versión de la clase: 4.30.0
+ * Descripción de la clase: Indica todos los atributos y métodos necesarios para la clase Estacion, que serán los vertices del grafo
+ */
+package grafos;
+import graphsDS_ESI_UCLM_v2.*;//Importa los elementos de la librería de grafos graphsDS_ESI_UCLM_v2
 
-// Clase que representa una estación y proporciona métodos para manejar sus datos
-public class Estacion implements iLecturaFichero,Identity {
-	private String identificador; // Identificador
-	private String latitud; // Latitud 
-	private String longitud; // Longitud 
-	private String nombre; // Nombre de la estación
-	private String zona; // Zona a la que pertenece la estación
-	private String numLineas; // Número de líneas de la estación
-
-	// Método para obtener el identificador de la estación
+public class Estacion implements iLecturaFichero,Identity {//Implementa las interfaces de lectura de ficheros y la que identifica el vertice del grafo
+	//Atributos privados de la clase de tipo cadena de caracteres
+	private String identificador;
+	private String latitud;
+	private String longitud;
+	private String nombre;
+	private String zona;
+	private String numLineas;
+	/*
+	 * Nombre del método: getIdentificador
+	 * Descripcion del método: Obtiene el valor de la variable identificador
+	 * Argumentos de llamada: Ninguno
+	 * Valor de retorno: String, pues devuelve el tipo de variable que se quiere obtener
+	 * Archivos necesarios: Ninguno
+	 */
 	public String getIdentificador() {
 		return identificador;
 	}
-
-	// Método para establecer el identificador de la estación
+	/*
+	 * Nombre del método: setIdentificador
+	 * Descripcion del método: Actualiza el valor de la variable identificador
+	 * Argumentos de llamada: 
+	 *		identificador: String que indica el valor que se desea actualizar
+	 * Valor de retorno: Void, pues solo actualiza
+	 * Archivos necesarios: Ninguno
+	 */
 	public void setIdentificador(String identificador) {
 		this.identificador = identificador;
 	}
-
-	// Método para obtener la latitud de la estación
+	/*
+	 * Nombre del método: getLatitud
+	 * Descripcion del método: Obtiene el valor de la variable latitud
+	 * Argumentos de llamada: Ninguno
+	 * Valor de retorno: String, pues devuelve el tipo de variable que se quiere obtener
+	 * Archivos necesarios: Ninguno
+	 */
 	public String getLatitud() {
 		return latitud;
 	}
-
-	// Método para establecer la latitud de la estación
+	/*
+	 * Nombre del método: setLatitud
+	 * Descripcion del método: Actualiza el valor de la variable latitud
+	 * Argumentos de llamada: 
+	 *		latitud: String que indica el valor que se desea actualizar
+	 * Valor de retorno: Void, pues solo actualiza
+	 * Archivos necesarios: Ninguno
+	 */
 	public void setLatitud(String latitud) {
 		this.latitud = latitud;
 	}
-
-	// Método para obtener la longitud de la estación
+	/*
+	 * Nombre del método: getLongitud
+	 * Descripcion del método: Obtiene el valor de la variable longitud
+	 * Argumentos de llamada: Ninguno
+	 * Valor de retorno: String, pues devuelve el tipo de variable que se quiere obtener
+	 * Archivos necesarios: Ninguno
+	 */
 	public String getLongitud() {
 		return longitud;
 	}
-
-	// Método para establecer la longitud de la estación
+	/*
+	 * Nombre del método: setLongitud
+	 * Descripcion del método: Actualiza el valor de la variable longitud
+	 * Argumentos de llamada: 
+	 *		longitud: String que indica el valor que se desea actualizar
+	 * Valor de retorno: Void, pues solo actualiza
+	 * Archivos necesarios: Ninguno
+	 */
 	public void setLongitud(String longitud) {
 		this.longitud = longitud;
 	}
-
-	// Método para obtener el nombre de la estación
+	/*
+	 * Nombre del método: getNombre
+	 * Descripcion del método: Obtiene el valor de la variable nombre
+	 * Argumentos de llamada: Ninguno
+	 * Valor de retorno: String, pues devuelve el tipo de variable que se quiere obtener
+	 * Archivos necesarios: Ninguno
+	 */
 	public String getNombre() {
 		return nombre;
 	}
-
-	// Método para establecer el nombre de la estación
+	/*
+	 * Nombre del método: setNombre
+	 * Descripcion del método: Actualiza el valor de la variable nombre
+	 * Argumentos de llamada: 
+	 *		nombre: String que indica el valor que se desea actualizar
+	 * Valor de retorno: Void, pues solo actualiza
+	 * Archivos necesarios: Ninguno
+	 */
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
-
-	// Método para obtener la zona de la estación
+	/*
+	 * Nombre del método: getZona
+	 * Descripcion del método: Obtiene el valor de la variable zona
+	 * Argumentos de llamada: Ninguno
+	 * Valor de retorno: String, pues devuelve el tipo de variable que se quiere obtener
+	 * Archivos necesarios: Ninguno
+	 */
 	public String getZona() {
 		return zona;
 	}
-
-	// Método para establecer la zona de la estación
+	/*
+	 * Nombre del método: setZona
+	 * Descripcion del método: Actualiza el valor de la variable zona
+	 * Argumentos de llamada: 
+	 *		zona: String que indica el valor que se desea actualizar
+	 * Valor de retorno: Void, pues solo actualiza
+	 * Archivos necesarios: Ninguno
+	 */
 	public void setZona(String zona) {
 		this.zona = zona;
 	}
-
-	// Método para obtener el número de líneas de la estación
+	/*
+	 * Nombre del método: getNumLineas
+	 * Descripcion del método: Obtiene el valor de la variable numLineas
+	 * Argumentos de llamada: Ninguno
+	 * Valor de retorno: String, pues devuelve el tipo de variable que se quiere obtener
+	 * Archivos necesarios: Ninguno
+	 */
 	public String getNumLineas() {
 		return numLineas;
 	}
-
-	// Método para establecer el número de líneas de la estación
+	/*
+	 * Nombre del método: setNumLineas
+	 * Descripcion del método: Actualiza el valor de la variable numLineas
+	 * Argumentos de llamada: 
+	 *		numLineas: String que indica el valor que se desea actualizar
+	 * Valor de retorno: Void, pues solo actualiza
+	 * Archivos necesarios: Ninguno
+	 */
 	public void setNumLineas(String numLineas) {
 		this.numLineas = numLineas;
 	}
-
-	// Método para leer datos de un array de cadenas y asignarlos a los campos de la estación segun el archivo que esta puesto en campusvirtual
-	public void leerDatos(String [] s) {// el numero de cada uno esta puesto tal y como viene en el archivo del campus
-		this.identificador = s[0]; // Asigna el identificador desde la posición 0 del array
-		this.latitud = s[1]; // Asigna la latitud desde la posición 1 del array
-		this.longitud = s[2]; // Asigna la longitud desde la posición 2 del array
-		this.nombre = s[3]; // Asigna el nombre desde la posición 3 del array
-		this.numLineas = s[6]; // Asigna el número de líneas desde la posición 6 del array
-		this.zona = s[5]; // Asigna la zona desde la posición 5 del array
+	/*
+	 * Nombre del método: leerFichero
+	 * Descripcion del método: Guarda lo leído en el fichero en un vector de cadenas
+	 * Argumentos de llamada: 
+	 *		s: Vector de cadenas de caracteres donde se van a almacenar dicha lectura
+	 * Valor de retorno: Void, pues solo guarda
+	 * Archivos necesarios: Ninguno
+	 */
+	public void leerDatos(String [] s) {
+		this.identificador=s[0];//Guarda el valor del identificador en la posicion 0
+		this.latitud=s[1];//Guarda el valor de la variable latitud en la posicion 1
+		this.longitud=s[2];//Guarda el valor de la variable longitud en la posicion 2
+		this.nombre=s[3];//Guarda el valor de la variable nombre en la posicion 3
+		this.numLineas=s[6];//Guarda el valor de la variable numLineas en la posicion 6
+		this.zona=s[5];//Guarda el valor de la variable zona en la posicion 5
 	}
-
-	// Método para representar la estación como una cadena de texto
+	/*
+	 * Nombre del método: toString
+	 * Descripcion del método: Representa en una cadena de caracteres lo que tiene la clase
+	 * Argumentos de llamada: Nunguno
+	 * Valor de retorno: String, pues devuelve una cadena de caracteres con lo que tiene la clase
+	 * Archivos necesarios: Ninguno
+	 */
 	public String toString() {
 		return "Estacion con: Identificador=" + identificador + ", latitud=" + latitud + ", longitud=" + longitud
-				+ ", nombre=" + nombre + ", zona=" + zona + " y numero de líneas=" + numLineas;
+				+ ", nombre=" + nombre + ", zona=" + zona + " y numero de líneas=" + numLineas ;
 	}
-
-	// Implementación del método getID() de la interfaz Identity
+	/*
+	 * Nombre del método: getID
+	 * Descripcion del método: Obtiene el identificador del vertice del grafo, que será idéntico al atributo identificador
+	 * Argumentos de llamada: Ninguno
+	 * Valor de retorno: String, pues devuelve el tipo de variable que se quiere obtener
+	 * Archivos necesarios: Ninguno
+	 */
 	public String getID() {
 		return identificador;
 	}
